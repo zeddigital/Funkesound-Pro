@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, PhoneCall } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,18 +18,29 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      // scroll anchor — if not on home, go home first then scroll
+      if (location !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const el = document.getElementById(href);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      } else {
+        const el = document.getElementById(href);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
   const navLinks = [
-    { name: "Services", id: "services" },
-    { name: "Why Us", id: "why-us" },
-    { name: "Reviews", id: "reviews" },
+    { name: "Services", href: "/services" },
+    { name: "Why Us", href: "why-us" },
+    { name: "Reviews", href: "reviews" },
   ];
 
   return (
@@ -53,7 +65,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <button
               key={link.name}
-              onClick={() => scrollToSection(link.id)}
+              onClick={() => handleNavClick(link.href)}
               className={`text-sm font-medium transition-colors tracking-wide ${
                 isScrolled ? 'text-slate-700 hover:text-primary' : 'text-white/80 hover:text-white'
               }`}
@@ -62,7 +74,7 @@ export function Navbar() {
             </button>
           ))}
           <Button 
-            onClick={() => scrollToSection('contact')}
+            onClick={() => handleNavClick('contact')}
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-full px-6 gap-2"
           >
             <PhoneCall className="w-4 h-4" />
@@ -93,14 +105,14 @@ export function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavClick(link.href)}
                 className="text-2xl font-display font-medium text-slate-800 hover:text-primary transition-colors"
               >
                 {link.name}
               </button>
             ))}
             <Button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => handleNavClick('contact')}
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-full px-8 mt-4 gap-2 text-lg"
             >
