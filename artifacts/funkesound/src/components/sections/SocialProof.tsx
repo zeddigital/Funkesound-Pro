@@ -55,11 +55,11 @@ const reviews = [
 
 export function SocialProof() {
   return (
-    <section id="reviews" className="py-24 md:py-32 bg-[#0a0a0a] relative border-y border-white/5">
+    <section id="reviews" className="py-24 md:py-32 bg-slate-50 relative border-y border-slate-100">
       <div className="container px-6 md:px-12 mx-auto">
         
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24 divide-x divide-white/5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24 divide-x divide-slate-200">
           {[
             { value: 100, suffix: "+", label: "Installs Completed" },
             { value: 5, suffix: " Star", label: "Google Rating" },
@@ -74,10 +74,10 @@ export function SocialProof() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="flex flex-col items-center text-center px-4"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display">
+              <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2 font-display">
                 <Counter from={0} to={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-sm md:text-base text-foreground/50 uppercase tracking-widest font-medium">
+              <div className="text-sm md:text-base text-slate-500 uppercase tracking-widest font-medium">
                 {stat.label}
               </div>
             </motion.div>
@@ -86,7 +86,7 @@ export function SocialProof() {
 
         {/* Reviews */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
             Don't just take our word for it
           </h2>
           <div className="flex justify-center gap-1 text-primary">
@@ -105,7 +105,7 @@ export function SocialProof() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <Card className="bg-background border-white/5 h-full relative overflow-hidden">
+              <Card className="bg-white border-slate-100 shadow-sm h-full relative overflow-hidden">
                 <div className="absolute top-6 right-6 text-primary/10">
                   <Quote className="w-12 h-12" />
                 </div>
@@ -115,12 +115,12 @@ export function SocialProof() {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-foreground/80 leading-relaxed mb-8 flex-grow">
+                  <p className="text-slate-600 leading-relaxed mb-8 flex-grow">
                     "{review.text}"
                   </p>
                   <div>
-                    <div className="font-bold text-foreground">{review.name}</div>
-                    <div className="text-sm text-foreground/50">{review.location}</div>
+                    <div className="font-bold text-slate-900">{review.name}</div>
+                    <div className="text-sm text-slate-400">{review.location}</div>
                   </div>
                 </CardContent>
               </Card>

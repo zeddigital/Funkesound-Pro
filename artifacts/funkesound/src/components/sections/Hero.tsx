@@ -9,10 +9,10 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 bg-[#0D0D0D]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90 z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent z-10 opacity-70 mix-blend-screen" />
         <motion.img 
           initial={{ scale: 1.1 }}
@@ -38,7 +38,7 @@ export function Hero() {
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
             </div>
-            <span className="text-sm font-medium text-foreground/90 tracking-wide uppercase">
+            <span className="text-sm font-medium text-white/90 tracking-wide uppercase">
               100+ 5-Star Reviews in Sydney
             </span>
           </motion.div>
@@ -47,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-foreground"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-white"
           >
             Expert installation.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary/90 to-primary">
@@ -59,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             Premium home technology installation specialising in seamless TV wall mounting, custom home theatres, and precision antenna setups.
           </motion.p>
@@ -97,7 +97,7 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
-        <span className="text-xs uppercase tracking-widest text-foreground/50">Scroll</span>
+        <span className="text-xs uppercase tracking-widest text-white/50">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
           <motion.div 
             animate={{ y: [0, 48] }}

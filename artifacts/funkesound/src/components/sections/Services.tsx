@@ -56,10 +56,10 @@ export function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
               Our <span className="text-primary">Services</span>
             </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl">
+            <p className="text-lg text-slate-500 max-w-2xl">
               We don't just install hardware. We integrate technology into your home with absolute precision, ensuring maximum performance without compromising your interior design.
             </p>
           </motion.div>
@@ -74,9 +74,9 @@ export function Services() {
         >
           {services.map((service, index) => (
             <motion.div key={service.id} variants={itemVariants}>
-              <Card className="h-full bg-card/50 border-white/5 hover:border-primary/50 transition-colors duration-500 overflow-hidden group">
+              <Card className="h-full bg-white border-slate-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-colors duration-500 overflow-hidden group">
                 <CardHeader className="pb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-500 text-foreground/80">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-500 flex items-center justify-center mb-6 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-500">
                     <service.icon className="w-7 h-7" />
                   </div>
                   <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors duration-300">
@@ -84,13 +84,13 @@ export function Services() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base text-foreground/60 mb-8 leading-relaxed">
+                  <CardDescription className="text-base text-slate-500 mb-8 leading-relaxed">
                     {service.description}
                   </CardDescription>
                   <ul className="space-y-3">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3 text-sm text-foreground/80">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors duration-300" />
+                      <li key={i} className="flex items-center gap-3 text-sm text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-colors duration-300" />
                         {feature}
                       </li>
                     ))}
@@ -101,9 +101,6 @@ export function Services() {
           ))}
         </motion.div>
       </div>
-      
-      {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
     </section>
   );
 }

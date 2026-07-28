@@ -5,18 +5,18 @@ import antennaImage from "@/assets/antenna-dusk.jpg";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-background">
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-[#0D0D0D]">
       <div className="absolute inset-0 z-0">
         <img 
           src={antennaImage} 
           alt="Antenna at dusk" 
           className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/50" />
       </div>
 
       <div className="container px-6 md:px-12 mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto bg-card/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-16 text-center">
+        <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-16 text-center">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,10 +24,10 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
               Ready to elevate your home?
             </h2>
-            <p className="text-lg text-foreground/60 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
               Get in touch today for a free consultation and quote. We service all of Sydney metro with prompt, professional installations.
             </p>
           </motion.div>
@@ -44,7 +44,7 @@ export function Contact() {
                 <PhoneCall className="w-8 h-8" />
               </div>
               <div>
-                <div className="text-sm text-foreground/50 uppercase tracking-widest mb-1">Call Us</div>
+                <div className="text-sm text-slate-500 uppercase tracking-widest mb-1">Call Us</div>
                 <div className="text-xl font-bold text-white">1300 FUNKE</div>
               </div>
             </motion.div>
@@ -56,11 +56,11 @@ export function Contact() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex flex-col items-center gap-4"
             >
-              <div className="w-16 h-16 rounded-full bg-white/5 text-foreground/80 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white/5 text-slate-400 flex items-center justify-center">
                 <Mail className="w-8 h-8" />
               </div>
               <div>
-                <div className="text-sm text-foreground/50 uppercase tracking-widest mb-1">Email</div>
+                <div className="text-sm text-slate-500 uppercase tracking-widest mb-1">Email</div>
                 <div className="text-xl font-bold text-white">hello@funkesound.com.au</div>
               </div>
             </motion.div>
@@ -72,11 +72,11 @@ export function Contact() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="flex flex-col items-center gap-4"
             >
-              <div className="w-16 h-16 rounded-full bg-white/5 text-foreground/80 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white/5 text-slate-400 flex items-center justify-center">
                 <Clock className="w-8 h-8" />
               </div>
               <div>
-                <div className="text-sm text-foreground/50 uppercase tracking-widest mb-1">Hours</div>
+                <div className="text-sm text-slate-500 uppercase tracking-widest mb-1">Hours</div>
                 <div className="text-xl font-bold text-white">Mon-Sat, 8am-6pm</div>
               </div>
             </motion.div>

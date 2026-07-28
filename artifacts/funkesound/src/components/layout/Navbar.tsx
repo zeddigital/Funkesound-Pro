@@ -35,7 +35,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4"
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-4"
           : "bg-transparent py-6"
       }`}
     >
@@ -54,7 +54,9 @@ export function Navbar() {
             <button
               key={link.name}
               onClick={() => scrollToSection(link.id)}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide"
+              className={`text-sm font-medium transition-colors tracking-wide ${
+                isScrolled ? 'text-slate-700 hover:text-primary' : 'text-white/80 hover:text-white'
+              }`}
             >
               {link.name}
             </button>
@@ -70,7 +72,9 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-foreground z-50"
+          className={`md:hidden z-50 ${
+            isScrolled || mobileMenuOpen ? 'text-slate-800' : 'text-white/80'
+          }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -84,13 +88,13 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 pt-16"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8 pt-16"
           >
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className="text-2xl font-display font-medium text-foreground hover:text-primary transition-colors"
+                className="text-2xl font-display font-medium text-slate-800 hover:text-primary transition-colors"
               >
                 {link.name}
               </button>

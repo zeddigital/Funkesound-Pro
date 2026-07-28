@@ -13,7 +13,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               <img src={logo} alt="Funkesound Logo" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
-            <p className="text-foreground/60 max-w-sm mb-6">
+            <p className="text-slate-500 max-w-sm mb-6">
               Premium home technology installation in Sydney. TV wall mounting, home theatre setups, and professional antenna installations.
             </p>
             <p className="text-primary font-bold text-xl">
@@ -24,24 +24,24 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 font-display tracking-wider uppercase text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">TV Wall Mounting</button></li>
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">Home Theatre Installs</button></li>
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">Antenna Installation</button></li>
+              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">TV Wall Mounting</button></li>
+              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Home Theatre Installs</button></li>
+              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Antenna Installation</button></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 font-display tracking-wider uppercase text-sm">Company</h4>
             <ul className="space-y-4">
-              <li><button onClick={() => document.getElementById('why-us')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">Why Choose Us</button></li>
-              <li><button onClick={() => document.getElementById('reviews')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">Reviews</button></li>
-              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})} className="text-foreground/60 hover:text-primary transition-colors">Contact</button></li>
+              <li><button onClick={() => document.getElementById('why-us')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Why Choose Us</button></li>
+              <li><button onClick={() => document.getElementById('reviews')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Reviews</button></li>
+              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Contact</button></li>
             </ul>
           </div>
 
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-sm text-foreground/40">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
           <p>© {currentYear} Funkesound. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>

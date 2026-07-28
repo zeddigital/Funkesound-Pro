@@ -13,7 +13,7 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section id="why-us" className="py-24 md:py-32 bg-[#111827] relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -39,7 +39,7 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute -bottom-8 -right-8 md:-right-12 bg-card border border-white/10 p-6 rounded-2xl shadow-2xl backdrop-blur-xl z-20 hidden sm:block"
+              className="absolute -bottom-8 -right-8 md:-right-12 bg-[#1F2937] border border-white/10 p-6 rounded-2xl shadow-2xl backdrop-blur-xl z-20 hidden sm:block"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
@@ -47,7 +47,7 @@ export function WhyChooseUs() {
                 </div>
                 <div>
                   <div className="text-xl font-bold text-white">100%</div>
-                  <div className="text-sm text-foreground/60 uppercase tracking-wider">Satisfaction</div>
+                  <div className="text-sm text-slate-400 uppercase tracking-wider">Satisfaction</div>
                 </div>
               </div>
             </motion.div>
@@ -60,11 +60,11 @@ export function WhyChooseUs() {
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
               Craftsmanship you can <span className="text-primary">see</span>. <br/>
               Technology you can <span className="text-primary">feel</span>.
             </h2>
-            <p className="text-lg text-foreground/60 mb-10 leading-relaxed">
+            <p className="text-lg text-slate-400 mb-10 leading-relaxed">
               We approach every installation not as a job, but as a craft. When you hire Funkesound, you're investing in peace of mind. We sweat the small details — leveling to the millimeter, hiding every cable, and calibrating your system until it's perfect.
             </p>
 
@@ -81,7 +81,7 @@ export function WhyChooseUs() {
                   <div className="mt-1 bg-primary/10 rounded-full p-1 text-primary">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
-                  <span className="text-lg text-foreground/80 font-medium">{point}</span>
+                  <span className="text-lg text-slate-300 font-medium">{point}</span>
                 </motion.li>
               ))}
             </ul>
