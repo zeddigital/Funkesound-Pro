@@ -12,10 +12,10 @@ type SubLink = { name: string; href: string; icon: React.ElementType; descriptio
 type NavLink = { name: string; href: string; children?: SubLink[] };
 
 const serviceDropdown: SubLink[] = [
-  { name: "All Services",          href: "/services",                  icon: LayoutGrid,  description: "Overview of everything we do"        },
-  { name: "TV Antenna Installation",href: "/services/antenna",          icon: Radio,       description: "Digital antenna install & repair"     },
-  { name: "TV Wall Mounting",       href: "/services/tv-wall-mounting", icon: MonitorPlay, description: "Flush mounts, zero visible cables"    },
-  { name: "Home Theatre",           href: "/services/home-theatre",     icon: Speaker,     description: "Cinema-grade audio & visual"          },
+  { name: "All Services",           href: "/services",                  icon: LayoutGrid,  description: "Overview of everything we do"     },
+  { name: "TV Antenna Installation", href: "/services/antenna",          icon: Radio,       description: "Digital antenna install & repair"  },
+  { name: "TV Wall Mounting",        href: "/services/tv-wall-mounting", icon: MonitorPlay, description: "Flush mounts, zero visible cables" },
+  { name: "Home Theatre",            href: "/services/home-theatre",     icon: Speaker,     description: "Cinema-grade audio & visual"       },
 ];
 
 const navLinks: NavLink[] = [
@@ -38,11 +38,11 @@ export function Navbar() {
   // Scroll state
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close dropdown on outside click
+  // Close desktop dropdown on outside click
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -55,8 +55,20 @@ export function Navbar() {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
   }, [mobileMenuOpen]);
 
   const handleNavClick = (href: string) => {
@@ -69,133 +81,110 @@ export function Navbar() {
   const isLight = isScrolled;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isLight
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-5 md:px-10 flex items-center justify-between">
+    <>
+      {/* ── Fixed header bar ─────────────────────────────────────────────── */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isLight
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm py-3"
+            : "bg-transparent py-5"
+        }`}
+      >
+        <div className="container mx-auto px-5 md:px-10 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group cursor-pointer z-50 relative">
-          <img
-            src={logo}
-            alt="Funkesound Logo"
-            className="h-8 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-          />
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group cursor-pointer relative">
+            <img
+              src={logo}
+              alt="Funkesound Logo"
+              className="h-8 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
 
-        {/* ── Desktop Nav (lg+) ───────────────────────────────────────── */}
-        <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) =>
-            link.children ? (
-              <div key={link.name} className="relative" ref={dropdownRef}>
+          {/* ── Desktop Nav (lg+) ─────────────────────────────────────── */}
+          <nav className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.name} className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors tracking-wide ${
+                      isLight ? "text-slate-700 hover:text-primary" : "text-white/80 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {dropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                        transition={{ duration: 0.18, ease: "easeOut" }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden"
+                      >
+                        <div className="p-2">
+                          {link.children.map((child) => (
+                            <button
+                              key={child.name}
+                              onClick={() => handleNavClick(child.href)}
+                              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors duration-150 text-left group"
+                            >
+                              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-150">
+                                <child.icon className="w-4 h-4 text-primary" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold text-slate-900 group-hover:text-primary transition-colors duration-150">
+                                  {child.name}
+                                </div>
+                                <div className="text-xs text-slate-400">{child.description}</div>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
                 <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors tracking-wide ${
+                  key={link.name}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`text-sm font-medium transition-colors tracking-wide ${
                     isLight ? "text-slate-700 hover:text-primary" : "text-white/80 hover:text-white"
                   }`}
                 >
                   {link.name}
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                  />
                 </button>
-
-                <AnimatePresence>
-                  {dropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                      transition={{ duration: 0.18, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden"
-                    >
-                      <div className="p-2">
-                        {link.children.map((child) => (
-                          <button
-                            key={child.name}
-                            onClick={() => handleNavClick(child.href)}
-                            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors duration-150 text-left group"
-                          >
-                            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-150">
-                              <child.icon className="w-4 h-4 text-primary" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-semibold text-slate-900 group-hover:text-primary transition-colors duration-150">
-                                {child.name}
-                              </div>
-                              <div className="text-xs text-slate-400">{child.description}</div>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className={`text-sm font-medium transition-colors tracking-wide ${
-                  isLight ? "text-slate-700 hover:text-primary" : "text-white/80 hover:text-white"
-                }`}
-              >
-                {link.name}
-              </button>
-            )
-          )}
-
-          <a href="tel:0414685502">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-full px-5 gap-2 text-sm">
-              <PhoneCall className="w-4 h-4" />
-              <span>0414 685 502</span>
-            </Button>
-          </a>
-        </nav>
-
-        {/* ── Mobile/Tablet Toggle (< lg) ─────────────────────────────── */}
-        <button
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          className={`lg:hidden z-50 relative w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
-            mobileMenuOpen
-              ? "text-white"
-              : isLight
-              ? "text-slate-800"
-              : "text-white"
-          }`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            {mobileMenuOpen ? (
-              <motion.span
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.18 }}
-              >
-                <X className="w-6 h-6" />
-              </motion.span>
-            ) : (
-              <motion.span
-                key="open"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.18 }}
-              >
-                <Menu className="w-6 h-6" />
-              </motion.span>
+              )
             )}
-          </AnimatePresence>
-        </button>
-      </div>
 
-      {/* ── Full-screen Mobile Menu ─────────────────────────────────────── */}
+            <a href="tel:0414685502">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-full px-5 gap-2 text-sm">
+                <PhoneCall className="w-4 h-4" />
+                <span>0414 685 502</span>
+              </Button>
+            </a>
+          </nav>
+
+          {/* ── Hamburger toggle (< lg) ──────────────────────────────── */}
+          <button
+            aria-label="Open menu"
+            className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
+              isLight ? "text-slate-800" : "text-white"
+            }`}
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </header>
+
+      {/* ── Full-screen mobile menu overlay (sibling of header, z-[9999]) ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -203,13 +192,24 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col overflow-y-auto"
+            className="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col overflow-y-auto"
           >
-            {/* Top bar spacer (same height as header) */}
-            <div className="h-16 flex-shrink-0" />
+            {/* Close button */}
+            <div className="flex items-center justify-between px-5 pt-4 pb-2 flex-shrink-0">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                <img src={logo} alt="Funkesound Logo" className="h-8 w-auto opacity-90" />
+              </Link>
+              <button
+                aria-label="Close menu"
+                className="w-10 h-10 flex items-center justify-center rounded-full text-white hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
 
             {/* Nav links */}
-            <div className="flex-1 flex flex-col px-8 pt-8 pb-4 gap-1">
+            <div className="flex-1 flex flex-col px-8 pt-6 pb-4 gap-1">
               {navLinks.map((link) =>
                 link.children ? (
                   <div key={link.name} className="flex flex-col">
@@ -219,7 +219,9 @@ export function Navbar() {
                     >
                       <span>{link.name}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-primary" : ""}`}
+                        className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${
+                          mobileServicesOpen ? "rotate-180 text-primary" : ""
+                        }`}
                       />
                     </button>
 
@@ -267,8 +269,8 @@ export function Navbar() {
               )}
             </div>
 
-            {/* CTA at bottom */}
-            <div className="px-8 pb-10 pt-4 flex flex-col gap-3">
+            {/* CTAs at bottom */}
+            <div className="px-8 pb-10 pt-4 flex flex-col gap-3 flex-shrink-0">
               <a href="tel:0414685502" className="block">
                 <Button
                   size="lg"
@@ -288,6 +290,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
