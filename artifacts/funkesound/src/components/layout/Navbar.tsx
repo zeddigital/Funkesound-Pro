@@ -12,7 +12,7 @@ const serviceDropdown: SubLink[] = [
   { name: "All Services", href: "/services", icon: LayoutGrid, description: "Overview of everything we do" },
   { name: "TV Antenna Installation", href: "/services/antenna", icon: Radio, description: "Digital antenna install & repair" },
   { name: "TV Wall Mounting", href: "/services/tv-wall-mounting", icon: MonitorPlay, description: "Flush mounts, zero visible cables" },
-  { name: "Home Theatre", href: "/services#home-theatre", icon: Speaker, description: "Cinema-grade audio & visual" },
+  { name: "Home Theatre", href: "/services/home-theatre", icon: Speaker, description: "Cinema-grade audio & visual" },
 ];
 
 const navLinks: NavLink[] = [

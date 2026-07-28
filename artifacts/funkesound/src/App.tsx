@@ -8,6 +8,7 @@ import AboutPage from '@/pages/About';
 import WhyUsPage from '@/pages/WhyUs';
 import AntennaInstallationPage from '@/pages/AntennaInstallation';
 import TvWallMountingPage from '@/pages/TvWallMounting';
+import HomeTheatrePage from '@/pages/HomeTheatre';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/why-us" component={WhyUsPage} />
       <Route path="/services/antenna" component={AntennaInstallationPage} />
       <Route path="/services/tv-wall-mounting" component={TvWallMountingPage} />
+      <Route path="/services/home-theatre" component={HomeTheatrePage} />
       <Route component={NotFound} />
     </Switch>
   );
