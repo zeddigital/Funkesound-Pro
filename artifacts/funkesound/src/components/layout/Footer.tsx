@@ -14,7 +14,7 @@ export function Footer() {
               <img src={logo} alt="Funkesound Logo" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-slate-500 max-w-sm mb-6">
-              Premium home technology installation in Sydney. TV wall mounting, home theatre setups, and professional antenna installations.
+              Premium home technology installation in Melbourne & the Mornington Peninsula. TV wall mounting, home theatre setups, and professional antenna installations.
             </p>
             <p className="text-primary font-bold text-xl">
               1300 FUNKE
