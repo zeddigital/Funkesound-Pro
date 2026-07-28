@@ -61,6 +61,12 @@ export function Footer() {
             >
               📄 Template: Home Theatre Suburb
             </button>
+            <button
+              onClick={() => goTo('/services/tv-wall-mounting/suburb')}
+              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-0.5 text-xs"
+            >
+              📄 Template: TV Wall Mounting Suburb
+            </button>
           </div>
         </div>
       </div>
