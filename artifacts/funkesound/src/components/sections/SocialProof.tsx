@@ -37,20 +37,35 @@ function Counter({ from, to, duration = 2, suffix = "" }: { from: number, to: nu
 
 const reviews = [
   {
-    name: "James T.",
-    location: "Sydney",
-    text: "Absolutely flawless work. The TV looks incredible mounted on our feature wall, and not a single cable is visible. Worth every penny for the peace of mind."
+    name: "Kaye",
+    location: "Melbourne",
+    text: "Definitely 5 stars! Steve responded quickly to my enquiry, was able to do the job within a couple of days, arrived exactly on time and came back again the next day with solutions for a very tricky antenna. Steve wall mounted 2 TVs for me, not a cable left to be seen and sorted out the aerial issues as well. Everything was cleaned up and taken away – thanks Steve, you did an amazing job."
   },
   {
-    name: "Sarah M.",
-    location: "North Shore",
-    text: "Transformed our living room into a proper home cinema. The attention to detail during the audio calibration was mind-blowing. Highly recommend Funkesound."
+    name: "Ed & Yvette",
+    location: "Melbourne",
+    text: "We had a vision of how we wanted our home theatre to be but had no idea on the various components, let alone how to put it all together. Steve came to our home, explained the best way to set up our home theatre and provided us with options of specs and suppliers. When it came to installation, Steve put it all together, tuned it to perfection – we now have an awesome home theatre."
   },
   {
-    name: "David L.",
-    location: "Inner West",
-    text: "Fast, professional, and immaculate cleanup afterwards. The new antenna fixed all our reception issues immediately. Great communication throughout."
-  }
+    name: "Chris",
+    location: "Melbourne",
+    text: "Steve fitted our new Samsung 65 inch TV to wall. Exceptional before, during and after customer service. Steve did a fantastic job and I would recommend highly as I have already done to my friends and work colleagues. Don't hesitate to use Steve – you will be glad you did."
+  },
+  {
+    name: "Paulo",
+    location: "Melbourne",
+    text: "It was great to see his professional way to hear our suggestions and think on the solutions for the problem, minimising costs and optimising alternatives. Steve at the end did an amazing job, fixing the problem with minimal implications on the house. Steve is the perfect example of an expert, honest and correct tradesperson."
+  },
+  {
+    name: "Juanita Sanger",
+    location: "Melbourne",
+    text: "One word — AWESOME! Steve, what a pleasure it was to meet someone who is so passionate about doing a great job. You certainly know everything there is to know about audio visual equipment. Your work exceeded our expectations and I couldn't believe you even sorted and neatened the TV cabinet! Already recommending your services to friends and family."
+  },
+  {
+    name: "Andrew",
+    location: "Melbourne",
+    text: "Had Steve wall mount a couple of TVs for us, relocate the antenna and Foxtel, and wall mount a soundbar. From the moment I called, Steve struck me as a great communicator, always happy to answer any questions. He did a fantastic job – efficient and skilled. I would thoroughly recommend Steve for any home theatre work you may need."
+  },
 ];
 
 export function SocialProof() {
@@ -61,9 +76,9 @@ export function SocialProof() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24 divide-x divide-slate-200">
           {[
-            { value: 100, suffix: "+", label: "Installs Completed" },
-            { value: 5, suffix: " Star", label: "Google Rating" },
-            { value: 10, suffix: " Yrs", label: "Industry Experience" },
+            { value: 59, suffix: "+", label: "5-Star Reviews" },
+            { value: 4, suffix: ".9★", label: "Average Rating" },
+            { value: 20, suffix: "+ Yrs", label: "Industry Experience" },
             { value: 100, suffix: "%", label: "Satisfaction Guarantee" },
           ].map((stat, i) => (
             <motion.div 
