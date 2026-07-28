@@ -74,7 +74,7 @@ export function SocialProof() {
       <div className="container px-6 md:px-12 mx-auto">
         
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24 divide-x divide-slate-200">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mb-24 md:divide-x md:divide-slate-200">
           {[
             { value: 59, suffix: "+", label: "5-Star Reviews" },
             { value: 4, suffix: ".9★", label: "Average Rating" },

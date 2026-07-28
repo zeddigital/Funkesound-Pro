@@ -44,28 +44,32 @@ export function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-          <p>© {currentYear} Funkesound. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+        <div className="pt-8 border-t border-white/5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <p className="text-sm text-slate-500">© {currentYear} Funkesound. All rights reserved.</p>
+            <div className="flex flex-wrap gap-4 text-sm text-slate-500">
+              <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+              <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => goTo('/services/antenna/suburb')}
-              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-0.5 text-xs"
+              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-1 text-xs"
             >
-              📄 Template: Antenna Suburb
+              📄 Antenna Suburb Template
             </button>
             <button
               onClick={() => goTo('/services/home-theatre/suburb')}
-              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-0.5 text-xs"
+              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-1 text-xs"
             >
-              📄 Template: Home Theatre Suburb
+              📄 Home Theatre Suburb Template
             </button>
             <button
               onClick={() => goTo('/services/tv-wall-mounting/suburb')}
-              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-0.5 text-xs"
+              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-1 text-xs"
             >
-              📄 Template: TV Wall Mounting Suburb
+              📄 TV Wall Mounting Suburb Template
             </button>
           </div>
         </div>

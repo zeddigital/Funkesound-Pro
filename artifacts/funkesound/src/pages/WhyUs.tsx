@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Contact } from "@/components/sections/Contact";
@@ -98,6 +99,7 @@ const stats = [
 ];
 
 export default function WhyUsPage() {
+  const [, navigate] = useLocation();
   const scrollToContact = () => {
     const el = document.getElementById("contact");
     el?.scrollIntoView({ behavior: "smooth" });
@@ -108,7 +110,7 @@ export default function WhyUsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-[55vh] flex items-end bg-[#0D0D0D] overflow-hidden pt-32 pb-20">
+      <section className="relative bg-[#0D0D0D] overflow-hidden pt-20 pb-14 md:pt-36 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(34,197,94,0.08),rgba(255,255,255,0))]" />
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -161,7 +163,7 @@ export default function WhyUsPage() {
             </Button>
             <Button
               variant="ghost"
-              onClick={scrollToContact}
+              onClick={() => navigate("/reviews")}
               className="text-white/60 hover:text-white gap-2 font-medium border border-white/10 hover:border-white/20 rounded-full px-6"
             >
               See our reviews
@@ -174,7 +176,7 @@ export default function WhyUsPage() {
       {/* Stats bar */}
       <section className="bg-[#111827] py-10 border-b border-white/5">
         <div className="container px-6 md:px-12 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:divide-x md:divide-white/10">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}

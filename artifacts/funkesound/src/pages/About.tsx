@@ -50,7 +50,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Page Hero */}
-      <section className="relative min-h-[50vh] flex items-end bg-[#0D0D0D] overflow-hidden pt-32 pb-20">
+      <section className="relative bg-[#0D0D0D] overflow-hidden pt-20 pb-14 md:pt-36 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(34,197,94,0.08),rgba(255,255,255,0))]" />
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -82,7 +82,7 @@ export default function AboutPage() {
       {/* Stats bar */}
       <section className="bg-[#111827] py-10 border-b border-white/5">
         <div className="container px-6 md:px-12 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:divide-x md:divide-white/10">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}

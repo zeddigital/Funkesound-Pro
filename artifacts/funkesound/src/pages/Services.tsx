@@ -206,7 +206,7 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Page Hero */}
-      <section className="relative min-h-[50vh] flex items-end bg-[#0D0D0D] overflow-hidden pt-32 pb-20">
+      <section className="relative bg-[#0D0D0D] overflow-hidden pt-20 pb-14 md:pt-36 md:pb-24">
         {/* Background texture */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(34,197,94,0.08),rgba(255,255,255,0))]" />
         <div
