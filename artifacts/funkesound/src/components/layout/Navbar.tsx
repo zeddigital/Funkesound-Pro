@@ -21,6 +21,7 @@ const navLinks: NavLink[] = [
   { name: "Services", href: "/services", children: serviceDropdown },
   { name: "Why Us", href: "/why-us" },
   { name: "Reviews", href: "reviews" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {

@@ -1,8 +1,11 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import logo from "@/assets/logo.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [, navigate] = useLocation();
+
+  const goTo = (path: string) => navigate(path);
 
   return (
     <footer className="bg-[#050505] border-t border-white/5 py-12 md:py-16">
@@ -16,26 +19,26 @@ export function Footer() {
             <p className="text-slate-500 max-w-sm mb-6">
               Premium home technology installation in Melbourne & the Mornington Peninsula. TV wall mounting, home theatre setups, and professional antenna installations.
             </p>
-            <p className="text-primary font-bold text-xl">
-              1300 FUNKE
-            </p>
+            <a href="tel:0414685502" className="text-primary font-bold text-xl hover:text-primary/80 transition-colors">
+              0414 685 502
+            </a>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 font-display tracking-wider uppercase text-sm">Services</h4>
             <ul className="space-y-4">
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">TV Wall Mounting</button></li>
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Home Theatre Installs</button></li>
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Antenna Installation</button></li>
+              <li><button onClick={() => goTo('/services/tv-wall-mounting')} className="text-slate-400 hover:text-primary transition-colors">TV Wall Mounting</button></li>
+              <li><button onClick={() => goTo('/services/home-theatre')} className="text-slate-400 hover:text-primary transition-colors">Home Theatre Installs</button></li>
+              <li><button onClick={() => goTo('/services/antenna')} className="text-slate-400 hover:text-primary transition-colors">Antenna Installation</button></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 font-display tracking-wider uppercase text-sm">Company</h4>
             <ul className="space-y-4">
-              <li><button onClick={() => document.getElementById('why-us')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Why Choose Us</button></li>
-              <li><button onClick={() => document.getElementById('reviews')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Reviews</button></li>
-              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})} className="text-slate-400 hover:text-primary transition-colors">Contact</button></li>
+              <li><button onClick={() => goTo('/why-us')} className="text-slate-400 hover:text-primary transition-colors">Why Choose Us</button></li>
+              <li><button onClick={() => goTo('/about')} className="text-slate-400 hover:text-primary transition-colors">About Us</button></li>
+              <li><button onClick={() => goTo('/contact')} className="text-slate-400 hover:text-primary transition-colors">Contact</button></li>
             </ul>
           </div>
 
