@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Funkesound"
+version = "1.0.0"
+id = "artifacts/funkesound"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19990
+
+[services.development]
+run = "pnpm --filter @workspace/funkesound run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/funkesound", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/funkesound/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19990"
+BASE_PATH = "/"
