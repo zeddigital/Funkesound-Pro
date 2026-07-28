@@ -13,6 +13,7 @@ import ContactPage from '@/pages/Contact';
 import AntennaSuburbPage from '@/pages/AntennaSuburb';
 import HomeTheatreSuburbPage from '@/pages/HomeTheatreSuburb';
 import TvWallMountingSuburbPage from '@/pages/TvWallMountingSuburb';
+import ReviewsPage from '@/pages/Reviews';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/services/antenna/suburb" component={AntennaSuburbPage} />
       <Route path="/services/home-theatre/suburb" component={HomeTheatreSuburbPage} />
       <Route path="/services/tv-wall-mounting/suburb" component={TvWallMountingSuburbPage} />
+      <Route path="/reviews" component={ReviewsPage} />
       <Route component={NotFound} />
     </Switch>
   );
