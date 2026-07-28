@@ -12,12 +12,9 @@ import {
   Signal,
   Bird,
   Star,
+  BadgeDollarSign,
   MonitorPlay,
   Speaker,
-  Wifi,
-  Tv,
-  Projector,
-  Music,
 } from "lucide-react";
 import antennaImg from "@/assets/antenna-dusk.jpg";
 
@@ -168,25 +165,45 @@ export default function AntennaSuburbPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {[
                 {
-                  text: "We offer a FREE onsite quote and carry a range of premium quality Australian and European digital TV antennas, boosters and filters to make sure we only install the TV antenna that best suits your home, office or even your caravan.",
+                  icon: BadgeDollarSign,
+                  title: "FREE Onsite Quote",
+                  text: "We carry a range of premium quality Australian and European digital TV antennas, boosters and filters to make sure we only install the antenna that best suits your home, office or caravan.",
+                  highlight: "No cost. No obligation.",
                 },
                 {
-                  text: "Our Funkesound team are fully trained for the installation of digital antenna products, fully insured and police checked.",
+                  icon: ShieldCheck,
+                  title: "Fully Trained & Insured",
+                  text: "Our Funkesound team are fully trained for the installation of digital antenna products, fully insured and police checked — so you can open your door with complete confidence.",
+                  highlight: "Police checked. Fully insured.",
                 },
                 {
-                  text: "With a proven track record for awesome customer service and only the highest grade TV antennas, you can be sure we are the solution to all your audio and visual needs.",
+                  icon: Star,
+                  title: "Proven Track Record",
+                  text: "With over 20 years of awesome customer service and only the highest grade TV antennas, you can be sure we are the solution to all your audio and visual needs.",
+                  highlight: "4.9★ across 59+ reviews.",
                 },
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="flex gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100"
+                  transition={{ delay: i * 0.12, duration: 0.55 }}
+                  className="relative bg-[#0D0D0D] rounded-2xl p-7 overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+                  {/* green top accent bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-primary rounded-t-2xl" />
+                  {/* subtle green glow behind icon */}
+                  <div className="absolute top-6 left-6 w-16 h-16 bg-primary/10 rounded-full blur-xl" />
+
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                    <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-4">{item.highlight}</p>
+                    <p className="text-sm text-slate-400 leading-relaxed">{item.text}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
