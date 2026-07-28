@@ -39,7 +39,7 @@ export function Hero() {
               ))}
             </div>
             <span className="text-sm font-medium text-white/90 tracking-wide uppercase">
-              100+ 5-Star Reviews in Sydney
+              100+ 5-Star Reviews in Melbourne
             </span>
           </motion.div>
 

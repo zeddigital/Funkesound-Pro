@@ -28,7 +28,7 @@ export function Contact() {
               Ready to elevate your home?
             </h2>
             <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-              Get in touch today for a free consultation and quote. We service all of Sydney metro with prompt, professional installations.
+              Get in touch today for a free consultation and quote. We service all of Melbourne metro with prompt, professional installations.
             </p>
           </motion.div>
 
