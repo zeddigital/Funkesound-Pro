@@ -41,7 +41,7 @@ export function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Why Us", href: "why-us" },
+    { name: "Why Us", href: "/why-us" },
     { name: "Reviews", href: "reviews" },
   ];
 

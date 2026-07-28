@@ -5,6 +5,7 @@ import NotFound from '@/pages/not-found';
 import Home from '@/pages/Home';
 import ServicesPage from '@/pages/Services';
 import AboutPage from '@/pages/About';
+import WhyUsPage from '@/pages/WhyUs';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/why-us" component={WhyUsPage} />
       <Route component={NotFound} />
     </Switch>
   );
