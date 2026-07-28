@@ -49,6 +49,12 @@ export function Footer() {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+            <button
+              onClick={() => goTo('/services/antenna/suburb')}
+              className="text-slate-600 hover:text-primary transition-colors border border-white/10 rounded px-2 py-0.5 text-xs"
+            >
+              📄 Template: Antenna Suburb
+            </button>
           </div>
         </div>
       </div>

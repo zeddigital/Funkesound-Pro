@@ -10,6 +10,7 @@ import AntennaInstallationPage from '@/pages/AntennaInstallation';
 import TvWallMountingPage from '@/pages/TvWallMounting';
 import HomeTheatrePage from '@/pages/HomeTheatre';
 import ContactPage from '@/pages/Contact';
+import AntennaSuburbPage from '@/pages/AntennaSuburb';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/services/antenna" component={AntennaInstallationPage} />
       <Route path="/services/tv-wall-mounting" component={TvWallMountingPage} />
       <Route path="/services/home-theatre" component={HomeTheatrePage} />
+      <Route path="/services/antenna/suburb" component={AntennaSuburbPage} />
       <Route component={NotFound} />
     </Switch>
   );
