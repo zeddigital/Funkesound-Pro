@@ -38,6 +38,7 @@ export function Navbar() {
   };
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Why Us", href: "why-us" },
     { name: "Reviews", href: "reviews" },
