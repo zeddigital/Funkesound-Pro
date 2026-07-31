@@ -18,6 +18,12 @@ import {
   Clock,
   Home,
   Building2,
+  Settings2,
+  Music,
+  Film,
+  Sliders,
+  Maximize2,
+  Eye,
 } from "lucide-react";
 import antennaImg from "@/assets/antenna-dusk.jpg";
 import theatreImg from "@/assets/home-theatre.jpg";
@@ -83,6 +89,66 @@ const services = [
     ],
     cta: "Fix My Reception",
     accent: "from-primary/20 to-emerald-500/5",
+  },
+  {
+    id: "remote-programming",
+    icon: Settings2,
+    label: "Remote Programming",
+    headline: "One Remote. Every Device. Just Works.",
+    description:
+      "Too many remotes, too many inputs. We program universal remotes, smart home control systems, and app-based AV setups so that a single button — or a single voice command — controls your entire system. From Logitech Harmony to Control4 and Crestron, we've got it covered.",
+    image: heroTvImg,
+    imageAlt: "AV remote programming and smart home integration",
+    features: [
+      { icon: Settings2, text: "Universal remote programming" },
+      { icon: Wifi, text: "Smart home platform integration (Control4, Crestron, Savant)" },
+      { icon: Tv, text: "App and voice control setup" },
+      { icon: Check, text: "Custom activity macros and scenes" },
+      { icon: Shield, text: "All brands and devices supported" },
+      { icon: Clock, text: "Same-week appointments available" },
+    ],
+    cta: "Book a Programming Session",
+    accent: "from-slate-900/0 to-slate-900/0",
+  },
+  {
+    id: "hi-fi",
+    icon: Music,
+    label: "Hi-Fi Installations",
+    headline: "Premium Audio, Installed to Perfection",
+    description:
+      "Great audio is about more than expensive speakers — it's about placement, calibration, and a clean installation. We design and install hi-fi systems for every room and every budget, from a simple stereo pair to whole-home multi-room audio. Every cable hidden. Every driver tuned.",
+    image: theatreImg,
+    imageAlt: "Hi-Fi audio system installation by Funkesound",
+    features: [
+      { icon: Speaker, text: "All major brands — KEF, B&W, Sonos, Denon and more" },
+      { icon: Music, text: "Stereo, surround, and multi-room audio" },
+      { icon: Volume2, text: "Full system calibration and room correction" },
+      { icon: Check, text: "Complete cable concealment" },
+      { icon: Sliders, text: "Amplifier and equipment rack wiring" },
+      { icon: Home, text: "Residential and commercial installs" },
+    ],
+    cta: "Plan Your Audio System",
+    accent: "from-primary/20 to-emerald-500/5",
+  },
+  {
+    id: "projectors-screens",
+    icon: Film,
+    label: "Projectors & Screens",
+    headline: "Your Room. Cinema Scale.",
+    description:
+      "A projector and screen done properly transforms any room into a true home cinema. We install, ceiling-mount, and calibrate projectors and screens of every type — motorised, fixed-frame, short-throw, laser, 4K — with every cable hidden and every pixel dialled in.",
+    image: theatreImg,
+    imageAlt: "Projector and screen installation by Funkesound",
+    features: [
+      { icon: Film, text: "Motorised and fixed-frame screen installation" },
+      { icon: Maximize2, text: "All projector types — 4K, laser, short-throw" },
+      { icon: Eye, text: "Full image calibration on every job" },
+      { icon: Check, text: "In-ceiling mounting with concealed cabling" },
+      { icon: Shield, text: "Screen size and throw distance advice" },
+      { icon: Building2, text: "Residential and commercial installations" },
+    ],
+    cta: "Plan Your Cinema Setup",
+    accent: "from-slate-900/0 to-slate-900/0",
   },
 ];
 

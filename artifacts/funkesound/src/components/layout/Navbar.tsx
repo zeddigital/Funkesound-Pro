@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   Menu, X, PhoneCall, ChevronDown,
   Radio, MonitorPlay, Speaker, LayoutGrid,
+  Settings2, Music, Film,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,10 +13,13 @@ type SubLink = { name: string; href: string; icon: React.ElementType; descriptio
 type NavLink = { name: string; href: string; children?: SubLink[] };
 
 const serviceDropdown: SubLink[] = [
-  { name: "All Services",           href: "/services",                  icon: LayoutGrid,  description: "Overview of everything we do"     },
-  { name: "TV Antenna Installation", href: "/services/antenna",          icon: Radio,       description: "Digital antenna install & repair"  },
-  { name: "TV Wall Mounting",        href: "/services/tv-wall-mounting", icon: MonitorPlay, description: "Flush mounts, zero visible cables" },
-  { name: "Home Theatre",            href: "/services/home-theatre",     icon: Speaker,     description: "Cinema-grade audio & visual"       },
+  { name: "All Services",           href: "/services",                       icon: LayoutGrid,  description: "Overview of everything we do"        },
+  { name: "TV Antenna Installation", href: "/services/antenna",               icon: Radio,       description: "Digital antenna install & repair"     },
+  { name: "TV Wall Mounting",        href: "/services/tv-wall-mounting",      icon: MonitorPlay, description: "Flush mounts, zero visible cables"    },
+  { name: "Home Theatre",            href: "/services/home-theatre",          icon: Speaker,     description: "Cinema-grade audio & visual"          },
+  { name: "Remote Programming",      href: "/services/remote-programming",    icon: Settings2,   description: "One remote to control everything"     },
+  { name: "Hi-Fi Installations",     href: "/services/hi-fi",                 icon: Music,       description: "Premium audio, expertly installed"    },
+  { name: "Projectors & Screens",    href: "/services/projectors-screens",    icon: Film,        description: "Cinema-scale picture in your home"    },
 ];
 
 const navLinks: NavLink[] = [

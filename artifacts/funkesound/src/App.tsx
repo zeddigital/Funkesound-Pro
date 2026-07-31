@@ -14,6 +14,9 @@ import AntennaSuburbPage from '@/pages/AntennaSuburb';
 import HomeTheatreSuburbPage from '@/pages/HomeTheatreSuburb';
 import TvWallMountingSuburbPage from '@/pages/TvWallMountingSuburb';
 import ReviewsPage from '@/pages/Reviews';
+import RemoteProgrammingPage from '@/pages/RemoteProgramming';
+import HiFiInstallationsPage from '@/pages/HiFiInstallations';
+import ProjectorsScreensPage from '@/pages/ProjectorsScreens';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
@@ -34,6 +37,9 @@ function Router() {
       <Route path="/services/home-theatre/suburb" component={HomeTheatreSuburbPage} />
       <Route path="/services/tv-wall-mounting/suburb" component={TvWallMountingSuburbPage} />
       <Route path="/reviews" component={ReviewsPage} />
+      <Route path="/services/remote-programming" component={RemoteProgrammingPage} />
+      <Route path="/services/hi-fi" component={HiFiInstallationsPage} />
+      <Route path="/services/projectors-screens" component={ProjectorsScreensPage} />
       <Route component={NotFound} />
     </Switch>
   );
