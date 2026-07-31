@@ -1,22 +1,13 @@
 import { motion } from "framer-motion";
 import { PhoneCall, Mail, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import antennaImage from "@/assets/antenna-dusk.jpg";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-[#1a2535]">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={antennaImage} 
-          alt="Antenna at dusk" 
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2535] via-[#1a2535]/75 to-[#1a2535]/30" />
-      </div>
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-background">
 
       <div className="container px-6 md:px-12 mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 md:p-16 text-center">
+        <div className="max-w-4xl mx-auto bg-[#0D0D0D] border border-white/10 rounded-3xl p-8 md:p-16 text-center">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
