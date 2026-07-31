@@ -151,10 +151,10 @@ export default function ReviewsPage() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/70 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/70 text-sm font-medium mb-3 md:mb-6">
               Melbourne's Most Trusted Audio &amp; Visual
             </div>
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-white font-display leading-tight mb-6">
+            <h1 className="text-3xl md:text-6xl xl:text-7xl font-bold text-white font-display leading-tight mb-4 md:mb-6">
               What Our Clients{" "}
               <span className="text-primary">Say</span>
             </h1>

@@ -154,7 +154,7 @@ export default function RemoteProgrammingPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end bg-[#0D0D0D] overflow-hidden pt-32 pb-20">
+      <section className="relative min-h-[60vh] flex items-end bg-[#0D0D0D] overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20">
         <div className="absolute inset-0">
           <img
             src={heroTvImg}
@@ -172,15 +172,15 @@ export default function RemoteProgrammingPage() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/70 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/70 text-sm font-medium mb-3 md:mb-6">
               <Settings2 className="w-3.5 h-3.5 text-primary" />
               Melbourne & Mornington Peninsula
             </div>
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold text-white font-display leading-tight mb-6">
+            <h1 className="text-3xl md:text-6xl xl:text-7xl font-bold text-white font-display leading-tight mb-3 md:mb-6">
               Remote Programming{" "}
               <span className="text-primary">&amp; Control</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed">
+            <p className="text-base md:text-xl text-white/60 max-w-2xl leading-relaxed">
               One remote. Every device. We program universal remotes, smart home systems, and app-based AV control — so everything just works, simply.
             </p>
           </motion.div>
@@ -189,7 +189,7 @@ export default function RemoteProgrammingPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 mt-10"
+            className="flex flex-col sm:flex-row gap-3 mt-5 md:mt-10"
           >
             <Button
               onClick={scrollToContact}

@@ -31,7 +31,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-4 md:mb-8"
           >
             <div className="flex gap-1 text-primary">
               {[1, 2, 3, 4, 5].map((i) => (
@@ -47,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-white"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-4 md:mb-6 text-white"
           >
             Expert installation.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary/90 to-primary">
@@ -59,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-xl text-white/70 mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             Premium home technology installation specialising in seamless TV wall mounting, custom home theatres, and precision antenna setups.
           </motion.p>
@@ -73,7 +73,7 @@ export function Hero() {
             <Button 
               onClick={scrollToContact}
               size="lg"
-              className="w-full sm:w-auto h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-semibold rounded-full group"
+              className="w-full sm:w-auto h-12 md:h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-base md:text-lg font-semibold rounded-full group"
             >
               Book an Installation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -82,7 +82,7 @@ export function Hero() {
               onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto h-14 px-8 border-white/20 text-white hover:bg-white/5 text-lg font-semibold rounded-full"
+              className="w-full sm:w-auto h-12 md:h-14 px-8 border-white/20 text-white hover:bg-white/5 text-base md:text-lg font-semibold rounded-full"
             >
               Explore Services
             </Button>
