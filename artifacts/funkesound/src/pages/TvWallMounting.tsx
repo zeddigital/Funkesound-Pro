@@ -158,9 +158,9 @@ export default function TvWallMountingPage() {
           <img
             src={heroTvImg}
             alt="TV professionally wall mounted"
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-55"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/60 to-[#0D0D0D]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/65 via-[#0D0D0D]/30 to-[#0D0D0D]/10" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(34,197,94,0.07),transparent)]" />
 
