@@ -296,7 +296,7 @@ export default function AntennaInstallationPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-y-10 md:gap-y-0 md:gap-x-6">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -306,11 +306,11 @@ export default function AntennaInstallationPage() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="relative flex flex-col md:items-center md:text-center"
               >
-                {/* Connector line */}
+                {/* Connector line — extends into the gap to stay connected */}
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px bg-white/10 z-0" />
+                  <div className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-[-24px] h-px bg-white/10 z-0" />
                 )}
-                <div className="flex md:flex-col md:items-center gap-5 md:gap-4 pb-10 md:pb-0 relative z-10">
+                <div className="flex md:flex-col md:items-center gap-5 md:gap-5 relative z-10">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
