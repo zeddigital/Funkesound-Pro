@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 bg-[#0D0D0D]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/70 z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent z-10 opacity-70 mix-blend-screen" />
         <motion.img 
           initial={{ scale: 1.1 }}
