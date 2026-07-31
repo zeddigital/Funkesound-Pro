@@ -9,24 +9,24 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center bg-[#0D0D0D] pt-24 pb-28 md:pt-20 md:pb-20">
-      {/* Background Image — overflow-hidden lives here, not on the section */}
+    <section className="relative min-h-[100dvh] flex flex-col bg-[#0D0D0D]">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/70 z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent z-10 opacity-70 mix-blend-screen" />
-        <motion.img 
+        <motion.img
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, ease: "easeOut" }}
-          src={heroImage} 
-          alt="Luxury TV Installation" 
+          src={heroImage}
+          alt="Luxury TV Installation"
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Content */}
-      <div className="container relative z-20 px-6 md:px-12 mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Content — flex-1 fills all space, scroll indicator pushed to bottom */}
+      <div className="flex-1 flex items-center justify-center relative z-20 px-6 md:px-12 pt-24 md:pt-20 pb-6">
+        <div className="max-w-4xl w-full mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button 
+            <Button
               onClick={scrollToContact}
               size="lg"
               className="w-full sm:w-auto h-12 md:h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-base md:text-lg font-semibold rounded-full group"
@@ -78,7 +78,7 @@ export function Hero() {
               Book an Installation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
+            <Button
               onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
               size="lg"
               variant="outline"
@@ -89,17 +89,17 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-      
-      {/* Scroll indicator — hidden on small screens where it would overlap buttons */}
-      <motion.div 
+
+      {/* Scroll indicator — flex sibling below content, overlap is impossible */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+        className="relative z-20 pb-10 flex flex-col items-center gap-2"
       >
         <span className="text-xs uppercase tracking-widest text-white/50">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
-          <motion.div 
+          <motion.div
             animate={{ y: [0, 48] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             className="absolute top-0 left-0 w-full h-1/2 bg-primary"
